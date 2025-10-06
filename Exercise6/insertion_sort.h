@@ -2,6 +2,7 @@
 #define _INSERTION_SORT_H_
 #include <vector>
 #include <functional>
+#include <iostream>
 
 using namespace std;
 
@@ -29,7 +30,7 @@ void selected_sort(vector<Comparable> &a)
 		// Assume current position holds
 		// the minimum element
 		int min_index = i;
-		// Assuming the array is already sorted the body takes will execute at constant time O(1)
+
 		for (int j = i + 1; j < a.size(); ++j)
 		{
 			if(a[j] < a[min_index]){min_index = j;}
@@ -41,6 +42,10 @@ void selected_sort(vector<Comparable> &a)
 	}
 }
 
+void printVector(const vector<int>& v) {
+    for (int x : v) std::cout << x << " ";
+    std::cout << "\n";
+}
 
 /*
  * This is the more public version of insertion sort.
